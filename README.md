@@ -1,5 +1,9 @@
 opsworks-cloudwatch-logs-cookbooks
 ==================================
+HOW TO USE:
+ 1. Configure your opsworks role with access to cloudwatch logs (see policy JSON below)
+ 2. Include the cwlogs cookbook in your custom cookbook repo
+ 3. Update your layers to add custom recipes. For "Setup" add "cwlogs", for "Deploy" add "cwlogs::deploy"
 
 IMPORTANT:
 
