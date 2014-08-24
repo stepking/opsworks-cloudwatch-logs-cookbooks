@@ -20,5 +20,12 @@ end
 #install if  not already installed
 execute "Install CloudWatch Logs agent" do
   command "#{node[:cwlogs][:directory]}/#{node[:cwlogs][:installer]} -n -r #{node[:cwlogs][:cw_region]} -c /tmp/cwlogs.cfg"
-  not_if { system "pgrep -f aws-logs-agent-setup" }
+#  not_if { system "pgrep -f aws-logs-agent-setup" }
 end
+
+#service "awslogs" do
+#  supports :restart =>true
+#  action :enable
+#  subscribes :restart, "template[/tmp/cwlogs.cfg", :immediately
+#end
+
