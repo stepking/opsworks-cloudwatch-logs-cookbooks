@@ -15,7 +15,7 @@ default[:cwlogs][:logfiles] = {}
 default[:cwlogs][:logfiles]["opsworks_agent"] = "/var/log/aws/opsworks/opsworks-agent.log"
 
 
-case platform_family?
+case platform_family
 when "rhel" 
 #amazon linux common logs
   default[:cwlogs][:logfiles]["messages"] = "/var/log/messages"
