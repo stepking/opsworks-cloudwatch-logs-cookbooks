@@ -20,5 +20,5 @@ end
 #install if  not already installed
 execute "Install CloudWatch Logs agent" do
   command "#{node[:cwlogs][:directory]}/#{node[:cwlogs][:installer]} -n -r #{node[:cwlogs][:cw_region]} -c #{node[:cwlogs][:directory]}/cwlogs.cfg"
-  not_if { Dir.exists?('/var/awslogs') }
+  not_if { File.exists?('/var/awslogs/state/awslogs.pid') }
 end
