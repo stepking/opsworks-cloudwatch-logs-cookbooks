@@ -1,8 +1,8 @@
-
+#Default Attributes
 
 #installation defaults
 default[:cwlogs][:installer] = "awslogs-agent-setup.py"
-default[:cwlogs][:installer_url] = "https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/#{node[:cwlogs][:installer]}"
+default[:cwlogs][:installer_url] = "https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/"
 default[:cwlogs][:directory] = "/opt/aws/cloudwatch"
 
 #currently only cwlogs has an endpoint in us-east-1
@@ -14,7 +14,7 @@ default[:cwlogs][:logfiles] = {}
 #opsworks logs
 default[:cwlogs][:logfiles]["opsworks_agent"] = "/var/log/aws/opsworks/opsworks-agent.log"
 
-
+#Create certain basic logs depending on OS in use
 case platform_family
 when "rhel" 
 #amazon linux common logs
