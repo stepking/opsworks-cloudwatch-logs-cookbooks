@@ -40,4 +40,5 @@ datetime_format = [%Y-%m-%d %H:%M:%S]
 log_group_name = <%= node[:opsworks][:stack][:name].gsub(' ','_') %>
 file = <%= dir %>
 log_stream_name = <%= node[:opsworks][:instance][:hostname] %>_<%= log %>
+<%= "\n" %>
 <% end -%>
